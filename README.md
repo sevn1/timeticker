@@ -17,8 +17,11 @@ import (
 )
 
 func main() {
-	TimerRate := time.Millisecond * 400
-	t := timeticker.Init(TimerRate, 20)
+    //频次
+    TimerRate := time.Millisecond * 400
+    //channel数量
+    channelNum = 20
+	t := timeticker.Init(TimerRate, channelNum)
 	for {
 		select {
 		case <-t.After(TimerRate):
